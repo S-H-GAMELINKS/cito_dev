@@ -4,7 +4,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ cito_dev.cpp -o cito -std=c++17"
+            "command": ["g++ cparse/builtin-features.o cparse/core-shunting-yard.o cito_dev.cpp -o cito -std=c++17 && ./cito"]
         }
     ]
 }

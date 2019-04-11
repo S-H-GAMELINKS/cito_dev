@@ -11,11 +11,6 @@ int main() {
         std::cout << "cito > ";
         std::cin >> cmd;
 
-        if (cmd == "exit") {
-            std::cout << "Exit Cito!" << std::endl;
-            break;
-        }
-
         std::cout << cmd << std::endl;
     }
 

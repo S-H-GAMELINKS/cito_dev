@@ -12,7 +12,7 @@ int main() {
     
     while(true) {
         std::cout << "cito > ";
-        std::cin >> cmd;
+        std::getline(std::cin, cmd);
 
         std::cout << calculator::calculate(cmd.c_str(), &vars)  << std::endl;
     }

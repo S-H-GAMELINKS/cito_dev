@@ -50,17 +50,21 @@ int main() {
     parser["NUMBER"]          = [](const peg::SemanticValues& sv) { return atol(sv.c_str()); };
 
     long val = 0;
+    bool quit = false;
     
     while(true) {
-        cmd = linenoise::Readline("cito > ");
+        quit = linenoise::Readline("cito > ", cmd);
 
-        linenoise::AddHistory(cmd.c_str());
-        linenoise::SaveHistory(path);
+        if (quit)
+            break;
 
         if (parser.parse(cmd.c_str(), val)) {
             std::cout << val << std::endl;
+            linenoise::AddHistory(cmd.c_str());
         }
     }
+
+    linenoise::SaveHistory(path);
 
     return 0;
 }

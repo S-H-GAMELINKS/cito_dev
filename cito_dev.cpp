@@ -39,7 +39,7 @@ int main() {
         FACTOR           <-  NUMBER / '(' _ EXPRESSION ')' _
         TERM_OPERATOR    <-  < [-+] > _
         FACTOR_OPERATOR  <-  < [/*] > _
-        NUMBER           <-  < [0-9]+ > _
+        NUMBER           <- '-'? [0-9]+ ('.' [0-9]+)?
         ~_               <-  [ \t\r\n]*
     )");
 
